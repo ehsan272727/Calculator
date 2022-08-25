@@ -50,7 +50,7 @@
                 string op = Console.ReadLine();
 
 
-                try
+                 try
                 {
                     result = calculator.DoOperation(cleanNum1, cleanNum2, op);
                     if (double.IsNaN(result))
