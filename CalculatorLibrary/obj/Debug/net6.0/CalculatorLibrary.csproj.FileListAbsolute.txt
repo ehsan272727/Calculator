@@ -1,0 +1,12 @@
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\bin\Debug\net6.0\CalculatorLibrary.deps.json
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\bin\Debug\net6.0\CalculatorLibrary.dll
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\bin\Debug\net6.0\CalculatorLibrary.pdb
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\CalculatorLibrary.csproj.AssemblyReference.cache
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\CalculatorLibrary.GeneratedMSBuildEditorConfig.editorconfig
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\CalculatorLibrary.AssemblyInfoInputs.cache
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\CalculatorLibrary.AssemblyInfo.cs
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\CalculatorLibrary.csproj.CoreCompileInputs.cache
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\CalculatorLibrary.dll
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\refint\CalculatorLibrary.dll
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\CalculatorLibrary.pdb
+G:\C# Training\The C# academy\Console Apps\Calculator\CalculatorLibrary\obj\Debug\net6.0\ref\CalculatorLibrary.dll
