@@ -8,7 +8,7 @@
             int useCount = usageCount.readUseCounts();
             bool endApp = false;
             // Display title as the C# console calculator app.
-            Console.WriteLine($"Console Calculator in C#\r has been used {useCount} time(s) so far");
+            Console.WriteLine($"Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
             
             while (!endApp)
