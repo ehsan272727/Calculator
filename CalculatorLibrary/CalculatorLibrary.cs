@@ -59,13 +59,13 @@ namespace CalculatorProgram
 
             return result;
         }
-        public void Finish()
+        public void Finish(int count)
         {
             writer.WriteEndArray();
             writer.WriteEndObject();
             writer.Close();
 
-            
+            usageCount.writeCounts(count);
         }
     }
 }

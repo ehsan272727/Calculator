@@ -76,7 +76,7 @@
 
                 Console.WriteLine("\n"); // Friendly linespacing.
             }
-            calculator.Finish();
+            calculator.Finish(useCount);
             return;
         }
     }
