@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Diagnostics;
 using Newtonsoft.Json;
 
 namespace CalculatorProgram
@@ -65,6 +64,8 @@ namespace CalculatorProgram
             writer.WriteEndArray();
             writer.WriteEndObject();
             writer.Close();
+
+            
         }
     }
 }
