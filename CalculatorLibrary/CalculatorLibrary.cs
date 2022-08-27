@@ -7,6 +7,7 @@ namespace CalculatorProgram
     public class Calculator
     {
         JsonWriter writer;
+        JsonReader reader;
         public Calculator()
         {
             StreamWriter logFile = File.CreateText("calculatorlog.json");
