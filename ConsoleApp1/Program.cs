@@ -5,9 +5,10 @@
         static void Main(string[] args)
         {
             Calculator calculator = new Calculator();
+            int useCount = usageCount.readUseCounts();
             bool endApp = false;
             // Display title as the C# console calculator app.
-            Console.WriteLine($"Console Calculator in C#\r has been used {}");
+            Console.WriteLine($"Console Calculator in C#\r has been used {useCount} time(s) so far");
             Console.WriteLine("------------------------\n");
             
             while (!endApp)
@@ -16,6 +17,8 @@
                 string numInput1 = "";
                 string numInput2 = "";
                 double result = 0;
+
+                Console.WriteLine($"\nnumber of times the calculator's been used : {useCount}\n");
 
                 // Ask the user to type the first number.
                 Console.Write("Type a number, and then press Enter: ");
@@ -66,6 +69,7 @@
 
                 Console.WriteLine("------------------------\n");
 
+                
                 // Wait for the user to respond before closing.
                 Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
                 if (Console.ReadLine() == "n") endApp = true;

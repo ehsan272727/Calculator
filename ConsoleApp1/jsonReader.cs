@@ -20,7 +20,7 @@ public static class usageCount
         return count;
     }
 
-    private static void writeCounts(int count)
+    public static void writeCounts(int count)
     {
         StreamWriter logFile = File.CreateText("usagecount.json");
         logFile.AutoFlush = true;
