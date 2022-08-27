@@ -6,14 +6,16 @@ public static class usageCount
         int count = 0; 
         if (File.Exists("usagecount.json"))
         {
-            StreamReader str = new StreamReader("usagecount.json");
-            JsonTextReader reader = new JsonTextReader(str);
-
-            while (reader.Read())
+            using (StreamReader str = new StreamReader("usagecount.json"))
             {
-                if (reader.TokenType == JsonToken.PropertyName)
+                JsonTextReader reader = new JsonTextReader(str);
+
+                while (reader.Read())
                 {
-                   count = int.Parse(reader.Value.ToString());
+                    if (reader.TokenType == JsonToken.Integer)
+                    {
+                        count = int.Parse(reader.Value.ToString());
+                    }
                 }
             }
         }
@@ -27,7 +29,7 @@ public static class usageCount
         JsonWriter writer = new JsonTextWriter(logFile);
         writer.Formatting = Formatting.Indented;
         writer.WriteStartObject();
-        writer.WritePropertyName("Operations");
+        writer.WritePropertyName("Count");
         writer.WriteValue(count);
         writer.WriteEndObject();
         writer.Close();
