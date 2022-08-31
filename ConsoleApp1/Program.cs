@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Calculator calculator = new Calculator();
+            LatestCalculations lsCalculations = calculator.latestCal;
             int useCount = usageCount.readUseCounts();
             bool endApp = false;
             // Display title as the C# console calculator app.
@@ -79,7 +80,7 @@
                 }
                 else if(readInput == "s")
                 {
-                    calculator.readList();
+                    lsCalculations.viewList();
                 }
                 
                 Console.WriteLine("\n"); // Friendly linespacing.

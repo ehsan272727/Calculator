@@ -6,7 +6,7 @@ namespace CalculatorProgram
     public class Calculator
     {
         JsonWriter writer;
-        LatestCalculations latestCal;
+        public  LatestCalculations latestCal;
         public Calculator()
         {
             latestCal = new();
@@ -72,11 +72,6 @@ namespace CalculatorProgram
             writer.Close();
 
             usageCount.writeCounts(count);
-        }
-
-        public void readList()
-        {
-            latestCal.viewList();
         }
 
         public double getResult(int number)
