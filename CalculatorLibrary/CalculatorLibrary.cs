@@ -6,8 +6,10 @@ namespace CalculatorProgram
     public class Calculator
     {
         JsonWriter writer;
+        LatestCalculations latestCal;
         public Calculator()
         {
+            latestCal = new();
             StreamWriter logFile = File.CreateText("calculatorlog.json");
             logFile.AutoFlush = true;
             writer = new JsonTextWriter(logFile);
@@ -32,14 +34,17 @@ namespace CalculatorProgram
                 case "a":
                     result = num1 + num2;
                     writer.WriteValue("Add");
+                    latestCal.addCal($"{num1} + {num2}", result);
                     break;
                 case "s":
                     result = num1 - num2;
                     writer.WriteValue("Subtract");
+                    latestCal.addCal($"{num1} - {num2}", result);
                     break;
                 case "m":
                     result = num1 * num2;
                     writer.WriteValue("Multiply");
+                    latestCal.addCal($"{num1} X {num2}", result);
                     break;
                 case "d":
                     // Ask the user to enter a non-zero divisor.
@@ -47,6 +52,7 @@ namespace CalculatorProgram
                     {
                         result = num1 / num2;
                         writer.WriteValue("Divide");
+                        latestCal.addCal($"{num1} / {num2}", result);
                     }
                     break;
                 // Return text for an incorrect option entry.
@@ -66,6 +72,16 @@ namespace CalculatorProgram
             writer.Close();
 
             usageCount.writeCounts(count);
+        }
+
+        public void readList()
+        {
+            latestCal.viewList();
+        }
+
+        public double getResult(int number)
+        {
+            return latestCal.getResult(number);
         }
     }
 }

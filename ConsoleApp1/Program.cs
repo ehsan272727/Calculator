@@ -71,9 +71,17 @@
 
                 useCount++;
                 // Wait for the user to respond before closing.
-                Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
-                if (Console.ReadLine() == "n") endApp = true;
-
+                Console.Write("Press 'n' and Enter to close the app,\n press s and enter to see the latest calculations, \n enter any other key and Enter to continue: ");
+                string readInput = Console.ReadLine();
+                if (readInput == "n")
+                {
+                    endApp = true;
+                }
+                else if(readInput == "s")
+                {
+                    calculator.readList();
+                }
+                
                 Console.WriteLine("\n"); // Friendly linespacing.
             }
             calculator.Finish(useCount);
