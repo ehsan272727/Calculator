@@ -13,13 +13,13 @@
     {
         foreach (var op in Calculations)
         {
-            Console.WriteLine($" {number} -- {op.Key} = {op.Value}");
+            Console.WriteLine($" {number} ::: {op.Key} = {op.Value}");
         }
         Console.WriteLine("\n");
     }
 
-    public double getResult(int number)
-    {
-        return Calculations.ElementAt(number - 1).Value;
-    }
+    public void deleteList() => Calculations.Clear(); 
+
+    public double getResult(int number) =>
+        Calculations.ElementAt(number - 1).Value;
 }
