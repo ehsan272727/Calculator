@@ -73,10 +73,5 @@ namespace CalculatorProgram
 
             usageCount.writeCounts(count);
         }
-
-        public double getResult(int number)
-        {
-            return latestCal.getResult(number);
-        }
     }
 }
