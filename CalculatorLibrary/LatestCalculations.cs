@@ -11,15 +11,20 @@
 
     public void viewList()
     {
+        int num = 1;
         foreach (var op in Calculations)
         {
-            Console.WriteLine($" {number} ::: {op.Key} = {op.Value}");
+            Console.WriteLine($" {num} ::: {op.Key} = {op.Value}");
+            num++;
         }
         Console.WriteLine("\n");
+
     }
 
     public void deleteList() => Calculations.Clear(); 
 
     public double getResult(int number) =>
         Calculations.ElementAt(number - 1).Value;
+
+    public int getLength() => Calculations.Count;
 }

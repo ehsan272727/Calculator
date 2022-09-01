@@ -2,12 +2,14 @@
 {
     class Program
     {
+        static double resultFromList = double.NaN;
         static void Main(string[] args)
         {
             Calculator calculator = new Calculator();
             LatestCalculations lsCalculations = calculator.latestCal;
             int useCount = usageCount.readUseCounts();
             bool endApp = false;
+            double cleanNum1 = 0;
             // Display title as the C# console calculator app.
             Console.WriteLine($"Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
@@ -18,19 +20,27 @@
                 string numInput1 = "";
                 string numInput2 = "";
                 double result = 0;
-
-                Console.WriteLine($"\nnumber of times the calculator's been used : {useCount}\n");
-
-                // Ask the user to type the first number.
-                Console.Write("Type a number, and then press Enter: ");
-                numInput1 = Console.ReadLine();
-
-                double cleanNum1 = 0;
-                while (!double.TryParse(numInput1, out cleanNum1))
+                if (double.IsNaN(resultFromList))
                 {
-                    Console.Write("This is not valid input. Please enter an integer value: ");
+                    Console.WriteLine($"\nnumber of times the calculator's been used : {useCount}\n");
+
+
+                    // Ask the user to type the first number.
+                    Console.Write("Type a number, and then press Enter: ");
                     numInput1 = Console.ReadLine();
+
+                    cleanNum1 = 0;
+                    while (!double.TryParse(numInput1, out cleanNum1))
+                    {
+                        Console.Write("This is not valid input. Please enter an integer value: ");
+                        numInput1 = Console.ReadLine();
+                    }
                 }
+                else
+                {
+                    cleanNum1 = resultFromList;
+                }
+                
 
                 // Ask the user to type the second number.
                 Console.Write("Type another number, and then press Enter: ");
@@ -72,7 +82,7 @@
 
                 useCount++;
                 // Wait for the user to respond before closing.
-                Console.Write("Press 'n' and Enter to close the app,\n press s and enter to see the latest calculations, \n enter any other key and Enter to continue: ");
+                Console.Write("Press 'n' and Enter to close the app\n press s and enter to see the latest calculations\n press any other key and Enter to continue: ");
                 string readInput = Console.ReadLine();
                 if (readInput == "n")
                 {
@@ -80,7 +90,25 @@
                 }
                 else if(readInput == "s")
                 {
+                    Console.WriteLine($"\nnumber of times the calculator's been used : {useCount}\n");
                     lsCalculations.viewList();
+                    Console.WriteLine("Enter a number to use the corresponding result\n Press 'd' and enter to delete the list\n Enter any other key to continute:");
+                    readInput = Console.ReadLine();
+                    int index = 0;
+                    if (int.TryParse(readInput, out index) && index <= lsCalculations.getLength() - 1 
+                        && index >= 0)
+                    {
+                        resultFromList = lsCalculations.getResult(index);
+                        Console.WriteLine($" \n{resultFromList}");
+                    }
+                    else if(readInput == "d")
+                    {
+                        lsCalculations.deleteList();
+                    }
+                    else
+                    {
+                        resultFromList = double.NaN;
+                    }
                 }
                 
                 Console.WriteLine("\n"); // Friendly linespacing.
