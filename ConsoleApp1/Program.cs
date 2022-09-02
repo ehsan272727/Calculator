@@ -2,14 +2,17 @@
 {
     class Program
     {
+        // Setting up variables
         static double resultFromList = double.NaN;
+        static int useCount;
+        static bool endApp = false;
+        static double cleanNum1 = 0;
+
         static void Main(string[] args)
         {
             Calculator calculator = new Calculator();
             LatestCalculations lsCalculations = calculator.latestCal;
-            int useCount = usageCount.readUseCounts();
-            bool endApp = false;
-            double cleanNum1 = 0;
+            useCount = usageCount.readUseCounts();
             // Display title as the C# console calculator app.
             Console.WriteLine($"Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
