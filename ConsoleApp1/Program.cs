@@ -116,7 +116,7 @@
                 Console.WriteLine("Enter a number to use the corresponding result\n Press 'd' and enter to delete the list\n Enter any other key to continute:");
                 readInput = Console.ReadLine();
                 int index = 0;
-                if (int.TryParse(readInput, out index) && index <= lsCalculations.getLength() - 1
+                if (int.TryParse(readInput, out index) && index <= lsCalculations.getLength()
                     && index >= 0)
                 {
                     resultFromList = lsCalculations.getResult(index);
