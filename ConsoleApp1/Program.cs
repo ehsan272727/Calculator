@@ -13,12 +13,11 @@
 
         static void Main(string[] args)
         {
-            LatestCalculations lsCalculations = calculator.latestCal;
-            useCount = usageCount.readUseCounts();
-            
+            Program newProgram = new Program();
+            newProgram.startApp();
         }
 
-        void startApp()
+        public void startApp()
         {
             calculator = new Calculator();
             lsCalculations = calculator.latestCal;
