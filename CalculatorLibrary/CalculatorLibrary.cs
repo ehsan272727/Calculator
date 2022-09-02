@@ -65,6 +65,21 @@ namespace CalculatorProgram
 
             return result;
         }
+
+        public double DoOperation(double num, string op)
+        {
+            double result = double.NaN;
+
+            writer.WriteStartObject();
+            writer.WritePropertyName("Operand");
+            writer.WriteValue(num);
+
+            writer.WritePropertyName("Result");
+            writer.WriteValue(result);
+            writer.WriteEndObject();
+
+            return result;
+        }
         public void Finish(int count)
         {
             writer.WriteEndArray();
