@@ -6,6 +6,7 @@
         static double resultFromList = double.NaN;
         static int useCount;
         static bool endApp = false;
+        static double cleanNum = 0;
         static double cleanNum1 = 0;
 
         List<string> doubleNumber = new()
@@ -42,70 +43,119 @@
 
         void initialize()
         {
-
-            // Declare variables and set to empty.
-            string numInput1 = "";
-            string numInput2 = "";
-            double result = 0;
-            if (double.IsNaN(resultFromList))
-            {
-                Console.WriteLine($"\nnumber of times the calculator's been used : {useCount}\n");
-
-
-                // Ask the user to type the first number.
-                Console.Write("Type a number, and then press Enter: ");
-                numInput1 = Console.ReadLine();
-
-                cleanNum1 = 0;
-                while (!double.TryParse(numInput1, out cleanNum1))
-                {
-                    Console.Write("This is not valid input. Please enter an integer value: ");
-                    numInput1 = Console.ReadLine();
-                }
-            }
-            else
-            {
-                cleanNum1 = resultFromList;
-            }
-
-
-            // Ask the user to type the second number.
-            Console.Write("Type another number, and then press Enter: ");
-            numInput2 = Console.ReadLine();
-
-            double cleanNum2 = 0;
-            while (!double.TryParse(numInput2, out cleanNum2))
-            {
-                Console.Write("This is not valid input. Please enter an integer value: ");
-                numInput2 = Console.ReadLine();
-            }
-
+            
             // Ask the user to choose an operator.
             Console.WriteLine("Choose an operator from the following list:");
             Console.WriteLine("\ta - Add");
             Console.WriteLine("\ts - Subtract");
             Console.WriteLine("\tm - Multiply");
             Console.WriteLine("\td - Divide");
+            Console.WriteLine("\tsq - Square Root");
             Console.Write("Your option? ");
 
             string op = Console.ReadLine();
 
-
-            try
+            if (doubleNumber.Contains(op))
             {
-                result = calculator.DoOperation(cleanNum1, cleanNum2, op);
-                if (double.IsNaN(result))
+
+                // Declare variables and set to empty.
+                string numInput1 = "";
+                string numInput2 = "";
+                double result = 0;
+                if (double.IsNaN(resultFromList))
                 {
-                    Console.WriteLine("This operation will result in a mathematical error.\n");
+                    Console.WriteLine($"\nnumber of times the calculator's been used : {useCount}\n");
+
+
+                    // Ask the user to type the first number.
+                    Console.Write("Type a number, and then press Enter: ");
+                    numInput1 = Console.ReadLine();
+
+                    cleanNum1 = 0;
+                    while (!double.TryParse(numInput1, out cleanNum1))
+                    {
+                        Console.Write("This is not valid input. Please enter an integer value: ");
+                        numInput1 = Console.ReadLine();
+                    }
                 }
-                else Console.WriteLine("Your result: {0:0.##}\n", result);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
+                else
+                {
+                    cleanNum1 = resultFromList;
+                }
+
+
+                // Ask the user to type the second number.
+                Console.Write("Type another number, and then press Enter: ");
+                numInput2 = Console.ReadLine();
+
+                double cleanNum2 = 0;
+                while (!double.TryParse(numInput2, out cleanNum2))
+                {
+                    Console.Write("This is not valid input. Please enter an integer value: ");
+                    numInput2 = Console.ReadLine();
+                }
+
+                try
+                {
+                    result = calculator.DoOperation(cleanNum1, cleanNum2, op);
+                    if (double.IsNaN(result))
+                    {
+                        Console.WriteLine("This operation will result in a mathematical error.\n");
+                    }
+                    else Console.WriteLine("Your result: {0:0.##}\n", result);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
+                }
+
+                Console.WriteLine("------------------------\n");
             }
 
-            Console.WriteLine("------------------------\n");
+            else
+            {
+                // Declare variables and set to empty.
+                string numInput = "";
+                double result = 0;
+                if (double.IsNaN(resultFromList))
+                {
+                    Console.WriteLine($"\nnumber of times the calculator's been used : {useCount}\n");
+
+
+                    // Ask the user to type the first number.
+                    Console.Write("Type a number, and then press Enter: ");
+                    numInput = Console.ReadLine();
+
+                    cleanNum = 0;
+                    while (!double.TryParse(numInput, out cleanNum))
+                    {
+                        Console.Write("This is not valid input. Please enter an integer value: ");
+                        numInput = Console.ReadLine();
+                    }
+                }
+                else
+                {
+                    cleanNum = resultFromList;
+                }
+
+                try
+                {
+                    result = calculator.DoOperation(cleanNum1, op);
+                    if (double.IsNaN(result))
+                    {
+                        Console.WriteLine("This operation will result in a mathematical error.\n");
+                    }
+                    else Console.WriteLine("Your result: {0:0.##}\n", result);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
+                }
+
+                Console.WriteLine("------------------------\n");
+            }
+
+
 
             useCount++;
             // Wait for the user to respond before closing.

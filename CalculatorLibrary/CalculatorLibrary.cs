@@ -74,6 +74,18 @@ namespace CalculatorProgram
             writer.WritePropertyName("Operand");
             writer.WriteValue(num);
 
+            switch (op)
+            {
+                case "sq":
+                    result = Math.Sqrt(num);
+                    writer.WriteValue("Square Root");
+                    latestCal.addCal($"\u221A {num}", result);
+                    break;
+                // Return text for an incorrect option entry.
+                default:
+                    break;
+            }
+
             writer.WritePropertyName("Result");
             writer.WriteValue(result);
             writer.WriteEndObject();
