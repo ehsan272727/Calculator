@@ -8,6 +8,12 @@
         static bool endApp = false;
         static double cleanNum1 = 0;
 
+        List<string> doubleNumber = new()
+        {
+            "a", "s", "m" , "d" 
+        };
+
+
         Calculator calculator;
         LatestCalculations lsCalculations;
 
