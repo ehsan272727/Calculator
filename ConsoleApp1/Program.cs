@@ -112,6 +112,7 @@
                 Console.WriteLine("------------------------\n");
             }
 
+            // Single number operations
             else
             {
                 // Declare variables and set to empty.
@@ -140,7 +141,7 @@
 
                 try
                 {
-                    result = calculator.DoOperation(cleanNum1, op);
+                    result = calculator.DoOperation(cleanNum, op);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");

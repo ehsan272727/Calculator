@@ -73,6 +73,7 @@ namespace CalculatorProgram
             writer.WriteStartObject();
             writer.WritePropertyName("Operand");
             writer.WriteValue(num);
+            writer.WritePropertyName("Operation");
 
             switch (op)
             {

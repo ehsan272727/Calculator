@@ -1,11 +1,9 @@
 ﻿public class LatestCalculations
 {
     private Dictionary<string, double> Calculations = new Dictionary<string, double>();
-    int number = 0;
 
     public void addCal(string operation, double result)
     {
-        number++;
         Calculations.Add(operation, result);
     }
 
